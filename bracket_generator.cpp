@@ -3,11 +3,12 @@
 //
 
 #include "bracket_generator.hpp"
+#include <iostream>
 
 
 // Team constructor
-Team::Team(int seed, int zipDigits, int pantoneColor) :
-    seed(seed), zipDigits(zipDigits), pantoneColor(pantoneColor){}
+Team::Team(int seed, std::string teamName, int zipDigits, int pantoneColor) :
+    seed(seed), teamName(teamName), zipDigits(zipDigits), pantoneColor(pantoneColor){}
 
 
 

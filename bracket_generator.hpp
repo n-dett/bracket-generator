@@ -5,6 +5,8 @@
 #ifndef FINAL_PROJECT_BRACKET_GENERATOR_HPP
 #define FINAL_PROJECT_BRACKET_GENERATOR_HPP
 
+#include <iostream>
+
 class Team {
 private:
     int zipDigits;
@@ -12,10 +14,9 @@ private:
 
 public:
     int seed;
+    std::string teamName;
 
-    Team(int seed, int zipDigits, int pantoneColor);
-
-
+    Team(int seed, std::string teamName, int zipDigits, int pantoneColor);
 
 };
 
