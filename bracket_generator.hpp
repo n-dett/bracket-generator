@@ -30,11 +30,19 @@ public:
     void setZip(int zipDigits){this->zipDigits = zipDigits;}
     void setPantone(int pantoneColor){this->pantoneColor = pantoneColor;}
     void setSeed(int seed){this->seed = seed;}
-    std::string getName(std::string teamName ){this->teamName = teamName;}
+    void getName(std::string teamName ){this->teamName = teamName;}
 
     // Choose random winners
-    Team randomWinner(Team const * const roundArr, Team * nextRoundArr, int teamsCount);
-    Team zipCodeWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
+    static void randomWinner
+    (Team const * const roundArr1, Team * const roundArr2,Team * const nextRoundArr, int gameIndex);
+
+    static void randomWinner(Team const * const roundArr, Team * nextRoundArr, const int teamsCount);
+    static Team chooseRandom(const Team & team1, const Team & team2);
+    void zipCodeWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
+    Team chooseZipCode(const Team & team1, const Team & team2);
+    void pantoneWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
+    Team choosePantone(const Team & team1, const Team & team2);
+    static void displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName);
 
 
 
@@ -58,7 +66,5 @@ public:
 
 };
 
-
-Team chooseRandom(Team team1, Team team2;
 
 #endif //FINAL_PROJECT_BRACKET_GENERATOR_HPP

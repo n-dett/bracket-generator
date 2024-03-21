@@ -222,13 +222,28 @@ int main() {
 
 
 
+// Round of 64
 
-    // Round of 64 winners
+    // Arrays for round of 64 winners
     Team east64Arr[8];
     Team west64Arr[8];
     Team south64Arr[8];
     Team midwest64Arr[8];
 
+    // Choose and fill round of 64 winners
+    Team::randomWinner(eastArr, east64Arr, 16);
+    Team::randomWinner(westArr, west64Arr, 16);
+    Team::randomWinner(southArr, south64Arr, 16);
+    Team::randomWinner(midwestArr, midwest64Arr, 16);
+
+    // Display round of 64 winners
+    Team::displayRoundWinners(eastArr, 8, "East Region Round of 64 Winners:");
+    Team::displayRoundWinners(westArr, 8, "West Region Round of 64 Winners:");
+    Team::displayRoundWinners(southArr, 8, "South Region Round of 64 Winners:");
+    Team::displayRoundWinners(midwestArr, 8, "Midwest Region Round of 64 Winners:");
+
+
+// Round of 32
 
     // Round of 32 winners
     Team east32Arr[4];
@@ -236,20 +251,87 @@ int main() {
     Team south32Arr[4];
     Team midwest32Arr[4];
 
+    // Choose and fill round of 32 winners
+    Team::randomWinner(east64Arr, east32Arr, 8);
+    Team::randomWinner(west64Arr, west32Arr, 8);
+    Team::randomWinner(south64Arr, south32Arr, 8);
+    Team::randomWinner(midwest64Arr, midwest32Arr, 8);
+
+    // Display round of 32 winners
+    Team::displayRoundWinners(east32Arr, 4, "East Region Round of 32 Winners:");
+    Team::displayRoundWinners(west32Arr, 4, "West Region Round of 32 Winners:");
+    Team::displayRoundWinners(south32Arr, 4, "South Region Round of 32 Winners:");
+    Team::displayRoundWinners(midwest32Arr, 4, "Midwest Region Round of 32 Winners:");
+
+
+ // Sweet Sixteen
+
     // Sweet Sixteen winners
     Team east16Arr[2];
     Team west16Arr[2];
     Team south16Arr[2];
     Team midwest16Arr[2];
 
+    // Choose and fill Sweet Sixteen winners
+    Team::randomWinner(east32Arr, east16Arr, 4);
+    Team::randomWinner(west32Arr, west16Arr, 4);
+    Team::randomWinner(south32Arr, south16Arr, 4);
+    Team::randomWinner(midwest32Arr, midwest16Arr, 4);
+
+    // Display Sweet Sixteen winners
+    Team::displayRoundWinners(east16Arr, 2, "East Region Sweet Sixteen Winners:");
+    Team::displayRoundWinners(west16Arr, 2, "West Region Sweet Sixteen Winners:");
+    Team::displayRoundWinners(south16Arr, 2, "South Region Sweet Sixteen Winners:");
+    Team::displayRoundWinners(midwest16Arr, 2, "Midwest Region Sweet SixteenWinners");
+
+
+
+// Elite Eight
+
     // Elite Eight winners
-    Team eliteEightArr[4];
+    Team east8Arr[1];
+    Team west8Arr[1];
+    Team south8Arr[1];
+    Team midwest8Arr[1];
 
-    // Final Four winners (Championship Game)
-    Team finalFourArr[2];
+    // Choose and fill Elite Eight winners
+    Team::randomWinner(east16Arr, east8Arr, 2);
+    Team::randomWinner(west16Arr, west8Arr, 2);
+    Team::randomWinner(south16Arr, south8Arr, 2);
+    Team::randomWinner(midwest16Arr, midwest8Arr, 2);
 
-    // Championship winner
-    Team nationalChampion;
+    // Display Elite Eight winners
+    Team::displayRoundWinners(east8Arr, 1, "East Region Elite Eight Winner");
+    Team::displayRoundWinners(west8Arr, 1, "West Region Elite Eight Winner");
+    Team::displayRoundWinners(south8Arr, 1, "South Region Elite Eight Winner");
+    Team::displayRoundWinners(midwest8Arr, 1, "Midwest Region Elite Eight Winner");
+
+
+
+// Final Four
+
+    // Final Four winners
+    Team finalFourArr1[1];
+    Team finalFourArr2[1];
+
+    // Choose and fill Elite Eight winners
+    // East vs. West winner
+    Team::randomWinner(east8Arr, west8Arr, finalFourArr1, 0);
+    // South vs. Midwest winner
+    Team::randomWinner(south8Arr, midwest8Arr, finalFourArr2, 1);
+
+    // Display Final Four winners
+    Team::displayRoundWinners(finalFourArr1, 1, "East vs. West Final Four Winner:");
+    Team::displayRoundWinners(finalFourArr2, 1, "South vs. Midwest Final Four Winner:");
+
+// Championship
+
+    // Choose and fill Elite Eight winners
+    Team nationalChampion[1];
+    Team::randomWinner(finalFourArr1, finalFourArr2, nationalChampion, 0);
+
+    // Display National Champion
+    Team::displayRoundWinners(nationalChampion, 1, "National Champion:");
 
 
     return 0;

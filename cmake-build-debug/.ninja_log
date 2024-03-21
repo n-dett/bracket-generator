@@ -1,0 +1,8 @@
+# ninja log v5
+0	3220	1710993752741022455	CMakeFiles/Final_Project.dir/main.cpp.o	2060f6eba39e6822
+1	3222	1710993752740985872	CMakeFiles/Final_Project.dir/bracket_generator.cpp.o	7b9ca749b53cf6ef
+2	309	1710993924196964710	CMakeFiles/Final_Project.dir/main.cpp.o	2060f6eba39e6822
+3	312	1710993924197424336	CMakeFiles/Final_Project.dir/bracket_generator.cpp.o	7b9ca749b53cf6ef
+1	292	1710994157571562910	CMakeFiles/Final_Project.dir/bracket_generator.cpp.o	7b9ca749b53cf6ef
+2	293	1710994157571080284	CMakeFiles/Final_Project.dir/main.cpp.o	2060f6eba39e6822
+293	334	1710994157615027202	Final_Project	48d5a32d475239
