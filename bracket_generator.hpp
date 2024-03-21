@@ -33,8 +33,13 @@ public:
     void getName(std::string teamName ){this->teamName = teamName;}
 
     // Choose random winners
+
+    // Functions for final four and championship only
     static void randomWinner
     (Team const * const roundArr1, Team * const roundArr2,Team * const nextRoundArr);
+    static void pantoneWinner(Team const * const roundArr1, Team * const roundArr2,Team * const nextRoundArr);
+    static void zipCodeWinner(Team const * const roundArr1, Team * const roundArr2, Team * const nextRoundArr);
+
 
     static void randomWinner(Team const * const roundArr, Team * nextRoundArr, const int teamsCount);
     static Team chooseRandom(const Team & team1, const Team & team2);
@@ -42,31 +47,9 @@ public:
     static Team chooseZipCode(const Team & team1, const Team & team2);
     static void pantoneWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
     static Team choosePantone(const Team & team1, const Team & team2);
-//    static void displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName);
-  //  static void displayFinalFour(Team const * const roundArr, int index, const std::string &roundName);
     static void displayGame(const Team & team1, const Team & team2, const Team & winner);
-
-
-
-
-
-    // Overloaded =
-    // overloaded assignment operator
-//    Team & operator=(const Team & rhs)
-//    {
-//        // copy the contents of the location pointed to by value
-//        (this->zipDigits) = rhs.zipDigits;
-//        (this->pantoneColor) = rhs.pantoneColor;
-//        (this->seed) = rhs.seed;
-//        (this->teamName) = rhs.teamName;
-//
-//
-//        // return our address
-//        return *this;
-//    }
-
-
 };
 
+void sectionHeading(std::string headingText);
 
 #endif //FINAL_PROJECT_BRACKET_GENERATOR_HPP

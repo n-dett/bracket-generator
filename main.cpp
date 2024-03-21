@@ -9,7 +9,15 @@ int main() {
     unsigned int seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
 
-    int criteria;
+    int criteria = 1;
+
+    // Intro
+    std::cout << "Welcome to March Madness Bracket Generator" << std::endl;
+    std::cout << "This program will allow you to generate winner picks for your bracket based on the "
+                 "criteria you choose." << std::endl;
+    std::cout << "If a matchup results in a tie, a random winner will be chosen." << std::endl << std::endl;
+
+    // Get user criteria selection
 
 
 
@@ -233,13 +241,44 @@ int main() {
     Team south64Arr[8];
     Team midwest64Arr[8];
 
-    std::cout << " Round of 64:" << std::endl;
+    sectionHeading("Round of 64");
 
     // Choose and fill round of 64 winners
-    Team::pantoneWinner(eastArr, east64Arr, 16);
-    Team::pantoneWinner(westArr, west64Arr, 16);
-    Team::pantoneWinner(southArr, south64Arr, 16);
-    Team::pantoneWinner(midwestArr, midwest64Arr, 16);
+
+    if(criteria == 3) {
+        std::cout << "East" << std::endl;
+        Team::pantoneWinner(eastArr, east64Arr, 16);
+        std::cout << "West" << std::endl;
+        Team::pantoneWinner(westArr, west64Arr, 16);
+        std::cout << "South" << std::endl;
+        Team::pantoneWinner(southArr, south64Arr, 16);
+        std::cout << "Midwest" << std::endl;
+        Team::pantoneWinner(midwestArr, midwest64Arr, 16);
+    } else if (criteria == 2)
+    {
+        std::cout << "East" << std::endl;
+        Team::zipCodeWinner(eastArr, east64Arr, 16);
+        std::cout << "West" << std::endl;
+        Team::zipCodeWinner(westArr, west64Arr, 16);
+        std::cout << "South" << std::endl;
+        Team::zipCodeWinner(southArr, south64Arr, 16);
+        std::cout << "Midwest" << std::endl;
+        Team::zipCodeWinner(midwestArr, midwest64Arr, 16);
+    } else
+    {
+        std::cout << "East" << std::endl;
+        Team::randomWinner(eastArr, east64Arr, 16);
+        std::cout << "West" << std::endl;
+        Team::randomWinner(westArr, west64Arr, 16);
+        std::cout << "South" << std::endl;
+        Team::randomWinner(southArr, south64Arr, 16);
+        std::cout << "Midwest" << std::endl;
+        Team::randomWinner(midwestArr, midwest64Arr, 16);
+    }
+
+
+
+    std::cout << std::endl;
 
 
 
@@ -252,13 +291,43 @@ int main() {
     Team south32Arr[4];
     Team midwest32Arr[4];
 
-    std::cout << " Round of 32:" << std::endl;
+    sectionHeading("Round of 32");
 
     // Choose and fill round of 32 winners
-    Team::pantoneWinner(east64Arr, east32Arr, 8);
-    Team::pantoneWinner(west64Arr, west32Arr, 8);
-    Team::pantoneWinner(south64Arr, south32Arr, 8);
-    Team::pantoneWinner(midwest64Arr, midwest32Arr, 8);
+
+    if(criteria == 3) {
+        std::cout << "East" << std::endl;
+        Team::pantoneWinner(east64Arr, east32Arr, 8);
+        std::cout << "West" << std::endl;
+        Team::pantoneWinner(west64Arr, west32Arr, 8);
+        std::cout << "South" << std::endl;
+        Team::pantoneWinner(south64Arr, south32Arr, 8);
+        std::cout << "Midwest" << std::endl;
+        Team::pantoneWinner(midwest64Arr, midwest32Arr, 8);
+    } else if (criteria == 2)
+    {
+        std::cout << "East" << std::endl;
+        Team::zipCodeWinner(east64Arr, east32Arr, 8);
+        std::cout << "West" << std::endl;
+        Team::zipCodeWinner(west64Arr, west32Arr, 8);
+        std::cout << "South" << std::endl;
+        Team::zipCodeWinner(south64Arr, south32Arr, 8);
+        std::cout << "Midwest" << std::endl;
+        Team::zipCodeWinner(midwest64Arr, midwest32Arr, 8);
+    } else
+    {
+        std::cout << "East" << std::endl;
+        Team::randomWinner(east64Arr, east32Arr, 8);
+        std::cout << "West" << std::endl;
+        Team::randomWinner(west64Arr, west32Arr, 8);
+        std::cout << "South" << std::endl;
+        Team::randomWinner(south64Arr, south32Arr, 8);
+        std::cout << "Midwest" << std::endl;
+        Team::randomWinner(midwest64Arr, midwest32Arr, 8);
+    }
+
+    std::cout << std::endl;
+
 
 
 
@@ -270,13 +339,43 @@ int main() {
     Team south16Arr[2];
     Team midwest16Arr[2];
 
-    std::cout << "Sweet Sixteen:" << std::endl;
+    sectionHeading("Sweet Sixteen");
 
     // Choose and fill Sweet Sixteen winners
-    Team::pantoneWinner(east32Arr, east16Arr, 4);
-    Team::pantoneWinner(west32Arr, west16Arr, 4);
-    Team::pantoneWinner(south32Arr, south16Arr, 4);
-    Team::pantoneWinner(midwest32Arr, midwest16Arr, 4);
+
+    if(criteria == 3) {
+        std::cout << "East" << std::endl;
+        Team::pantoneWinner(east32Arr, east16Arr, 4);
+        std::cout << "West" << std::endl;
+        Team::pantoneWinner(west32Arr, west16Arr, 4);
+        std::cout << "South" << std::endl;
+        Team::pantoneWinner(south32Arr, south16Arr, 4);
+        std::cout << "Midwest" << std::endl;
+        Team::pantoneWinner(midwest32Arr, midwest16Arr, 4);
+    } else if (criteria == 2)
+    {
+        std::cout << "East" << std::endl;
+        Team::zipCodeWinner(east32Arr, east16Arr, 4);
+        std::cout << "West" << std::endl;
+        Team::zipCodeWinner(west32Arr, west16Arr, 4);
+        std::cout << "South" << std::endl;
+        Team::zipCodeWinner(south32Arr, south16Arr, 4);
+        std::cout << "Midwest" << std::endl;
+        Team::zipCodeWinner(midwest32Arr, midwest16Arr, 4);
+    } else
+    {
+        std::cout << "East" << std::endl;
+        Team::randomWinner(east32Arr, east16Arr, 4);
+        std::cout << "West" << std::endl;
+        Team::randomWinner(west32Arr, west16Arr, 4);
+        std::cout << "South" << std::endl;
+        Team::randomWinner(south32Arr, south16Arr, 4);
+        std::cout << "Midwest" << std::endl;
+        Team::randomWinner(midwest32Arr, midwest16Arr, 4);
+    }
+
+    std::cout << std::endl;
+
 
 
 
@@ -288,13 +387,44 @@ int main() {
     Team south8Arr[1];
     Team midwest8Arr[1];
 
-    std::cout << "Elite Eight:" << std::endl;
+    sectionHeading("Elite Eight");
 
     // Choose and fill Elite Eight winners
-    Team::pantoneWinner(east16Arr, east8Arr, 2);
-    Team::pantoneWinner(west16Arr, west8Arr, 2);
-    Team::pantoneWinner(south16Arr, south8Arr, 2);
-    Team::pantoneWinner(midwest16Arr, midwest8Arr, 2);
+
+    if(criteria == 3) {
+        std::cout << "East" << std::endl;
+        Team::pantoneWinner(east16Arr, east8Arr, 2);
+        std::cout << "West" << std::endl;
+        Team::pantoneWinner(west16Arr, west8Arr, 2);
+        std::cout << "South" << std::endl;
+        Team::pantoneWinner(south16Arr, south8Arr, 2);
+        std::cout << "Midwest" << std::endl;
+        Team::pantoneWinner(midwest16Arr, midwest8Arr, 2);
+    } else if (criteria == 2)
+    {
+        std::cout << "East" << std::endl;
+        Team::zipCodeWinner(east16Arr, east8Arr, 2);
+        std::cout << "West" << std::endl;
+        Team::zipCodeWinner(west16Arr, west8Arr, 2);
+        std::cout << "South" << std::endl;
+        Team::zipCodeWinner(south16Arr, south8Arr, 2);
+        std::cout << "Midwest" << std::endl;
+        Team::zipCodeWinner(midwest16Arr, midwest8Arr, 2);
+    } else
+    {
+        std::cout << "East" << std::endl;
+        Team::randomWinner(east16Arr, east8Arr, 2);
+        std::cout << "West" << std::endl;
+        Team::randomWinner(west16Arr, west8Arr, 2);
+        std::cout << "South" << std::endl;
+        Team::randomWinner(south16Arr, south8Arr, 2);
+        std::cout << "Midwest" << std::endl;
+        Team::randomWinner(midwest16Arr, midwest8Arr, 2);
+    }
+
+    std::cout << std::endl;
+
+
 
 
 // Final Four
@@ -303,25 +433,50 @@ int main() {
     Team finalFourArr1[1];
     Team finalFourArr2[1];
 
-    std::cout << "Final Four:" << std::endl;
+    sectionHeading("Final Four");
 
-    // Choose and fill Elite Eight winners
-    // East vs. West winner
-   // Team::pantoneWinner(east8Arr, west8Arr, finalFourArr1);
-    // South vs. Midwest winner
-   // Team::pantoneWinner(south8Arr, midwest8Arr, finalFourArr2);
+    // Choose and fill Final Four winners
 
+    if(criteria == 3) {
+        // East vs. West winner
+        Team::pantoneWinner(east8Arr, west8Arr, finalFourArr1);
+        // South vs. Midwest winner
+        Team::pantoneWinner(south8Arr, midwest8Arr, finalFourArr2);
+    } else if (criteria == 2)
+    {
+        // East vs. West winner
+        Team::zipCodeWinner(east8Arr, west8Arr, finalFourArr1);
+        // South vs. Midwest winner
+        Team::zipCodeWinner(south8Arr, midwest8Arr, finalFourArr2);
+    } else
+    {
+        // East vs. West winner
+        Team::randomWinner(east8Arr, west8Arr, finalFourArr1);
+        // South vs. Midwest winner
+        Team::randomWinner(south8Arr, midwest8Arr, finalFourArr2);
+    }
+
+    std::cout << std::endl << std::endl;
 
 
 // Championship
 
     // Choose and fill National Champion
-   // Team nationalChampion[1];
+    Team nationalChampion[1];
 
-    std::cout << "National Championship:" << std::endl;
-    //Team::pantoneWinner(finalFourArr1, finalFourArr2, nationalChampion);
+    sectionHeading("National Championship");
 
+    if(criteria == 3) {
+        Team::pantoneWinner(finalFourArr1, finalFourArr2, nationalChampion);
 
+    } else if (criteria == 2)
+    {
+        Team::zipCodeWinner(finalFourArr1, finalFourArr2, nationalChampion);
+
+    } else
+    {
+        Team::randomWinner(finalFourArr1, finalFourArr2, nationalChampion);
+    }
 
     return 0;
 }
