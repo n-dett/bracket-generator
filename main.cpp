@@ -1,12 +1,18 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "bracket_generator.hpp"
 
 int main() {
-    const int regionSize = 16;
+
+    // Generate random seed for randomWinner
+    unsigned int seed = static_cast<unsigned int>(time(nullptr));
+    srand(seed);
+
 
 
     // East Region
-    Team eastArr[regionSize];
+    Team eastArr[16];
 
     Team uConn(1, "UConn", 269, 89);
     eastArr[0] = uConn;
@@ -58,7 +64,7 @@ int main() {
 
 
     // West Region
-    Team westArr[regionSize];
+    Team westArr[16];
 
     Team northCarolina(1, "North Carolina", 514, 42);
     westArr[0] = northCarolina;
@@ -111,7 +117,7 @@ int main() {
 
 
     // South Region
-    Team southArr[regionSize];
+    Team southArr[16];
 
     Team houston(1, "Houston", 4, 86);
     southArr[0] = houston;
@@ -164,7 +170,7 @@ int main() {
 
 
     // Midwest Region
-    Team midwestArr[regionSize];
+    Team midwestArr[16];
 
     Team purdue(1, "Purdue", 907, 2);
     midwestArr[0] = purdue;
@@ -216,6 +222,34 @@ int main() {
 
 
 
+
+    // Round of 64 winners
+    Team east64Arr[8];
+    Team west64Arr[8];
+    Team south64Arr[8];
+    Team midwest64Arr[8];
+
+
+    // Round of 32 winners
+    Team east32Arr[4];
+    Team west32Arr[4];
+    Team south32Arr[4];
+    Team midwest32Arr[4];
+
+    // Sweet Sixteen winners
+    Team east16Arr[2];
+    Team west16Arr[2];
+    Team south16Arr[2];
+    Team midwest16Arr[2];
+
+    // Elite Eight winners
+    Team eliteEightArr[4];
+
+    // Final Four winners (Championship Game)
+    Team finalFourArr[2];
+
+    // Championship winner
+    Team nationalChampion;
 
 
     return 0;
