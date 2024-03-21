@@ -16,6 +16,7 @@ public:
     int seed;
     std::string teamName;
 
+    Team(){};
     Team(int seed, std::string teamName, int zipDigits, int pantoneColor);
 
 };
