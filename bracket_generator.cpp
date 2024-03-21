@@ -13,7 +13,7 @@ Team::Team(int seed, std::string teamName, int zipDigits, int pantoneColor) :
 
 
 // Choose random game winners for final four and championship
-void Team::randomWinner(Team const * const roundArr1, Team * const roundArr2, Team * const nextRoundArr, int gameIndex)
+void Team::randomWinner(Team const * const roundArr1, Team * const roundArr2, Team * const nextRoundArr)
 {
     Team winner;
     Team team1 = roundArr1[0];
@@ -23,7 +23,7 @@ void Team::randomWinner(Team const * const roundArr1, Team * const roundArr2, Te
     winner = chooseRandom(team1, team2);
 
     // Add winner to next round array
-    nextRoundArr[gameIndex] = winner;
+    nextRoundArr[0] = winner;
 }
 
 // Choose random game winners and fill next array
@@ -165,10 +165,10 @@ void Team::pantoneWinner(Team const * const roundArr, Team * const nextRoundArr,
 Team Team::choosePantone(const Team & team1, const Team & team2)
 {
     Team winner;
-    if(team1.getPantone() < team2.getPantone())
+    if(team1.getPantone() > team2.getPantone())
     {
         winner = team1;
-    } else if(team2.getPantone() < team1.getPantone())
+    } else if(team2.getPantone() > team1.getPantone())
     {
         winner = team2;
     } else
@@ -189,11 +189,22 @@ void Team::displayRoundWinners(Team const * const roundArr, int roundArrLength, 
     {
         std::cout << roundArr[roundArrIndex].getSeed() << " "
         << roundArr[roundArrIndex].getName() << std::endl;
+
+        roundArrIndex++;
     }
 
     std::cout << std::endl;
 }
 
+// Display final four
+void Team::displayFinalFour(Team const * const roundArr, int index, const std::string &roundName)
+{
+    std::cout << roundName << std::endl;
+        std::cout << roundArr[index].getSeed() << " "
+                  << roundArr[index].getName() << std::endl;
+
+    std::cout << std::endl;
+}
 
 
 

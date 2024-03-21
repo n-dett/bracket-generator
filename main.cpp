@@ -5,7 +5,7 @@
 
 int main() {
 
-    // Generate random seed for randomWinner
+    // Generate random seed for pantoneWinner
     unsigned int seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
 
@@ -146,8 +146,8 @@ int main() {
     Team texasAM(9, "Texas A&M", 843, 21);
     southArr[8] = texasAM;
 
-    Team tbd1(10, "TBD 1", 0, 0);
-    southArr[9] = tbd1;
+    Team colorado(10, "Colorado", 309, 25);
+    southArr[9] = colorado;
 
     Team ncState(11, "NC State", 607, 86);
     southArr[10] = ncState;
@@ -196,11 +196,12 @@ int main() {
     Team utahSt(8, "Utah St.", 322, 39);
     midwestArr[7] = utahSt;
 
-    Team coloradoSt(9, "Colorado St.", 521, 57);
-    midwestArr[8] = coloradoSt;
+    Team tcu(9, "TCU", 109, 68);
+    midwestArr[8] = tcu;
 
-    Team tcu(10, "TCU", 109, 68);
-    midwestArr[9] = tcu;
+    Team coloradoSt(10, "Colorado St.", 521, 57);
+    midwestArr[9] = coloradoSt;
+
 
     Team oregon(11, "Oregon", 401, 56);
     midwestArr[10] = oregon;
@@ -217,8 +218,8 @@ int main() {
     Team saintPeters(15, "Saint Peter's", 306, 41);
     midwestArr[14] = saintPeters;
 
-    Team tbd2(16, "TBD 2", 0, 0);
-    midwestArr[15] = tbd2;
+    Team gramblingSt(16, "Grambling St.", 245, 24);
+    midwestArr[15] = gramblingSt;
 
 
 
@@ -231,16 +232,16 @@ int main() {
     Team midwest64Arr[8];
 
     // Choose and fill round of 64 winners
-    Team::randomWinner(eastArr, east64Arr, 16);
-    Team::randomWinner(westArr, west64Arr, 16);
-    Team::randomWinner(southArr, south64Arr, 16);
-    Team::randomWinner(midwestArr, midwest64Arr, 16);
+    Team::pantoneWinner(eastArr, east64Arr, 16);
+    Team::pantoneWinner(westArr, west64Arr, 16);
+    Team::pantoneWinner(southArr, south64Arr, 16);
+    Team::pantoneWinner(midwestArr, midwest64Arr, 16);
 
     // Display round of 64 winners
-    Team::displayRoundWinners(eastArr, 8, "East Region Round of 64 Winners:");
-    Team::displayRoundWinners(westArr, 8, "West Region Round of 64 Winners:");
-    Team::displayRoundWinners(southArr, 8, "South Region Round of 64 Winners:");
-    Team::displayRoundWinners(midwestArr, 8, "Midwest Region Round of 64 Winners:");
+    Team::displayRoundWinners(east64Arr, 8, "East Region Round of 64 Winners:");
+    Team::displayRoundWinners(west64Arr, 8, "West Region Round of 64 Winners:");
+    Team::displayRoundWinners(south64Arr, 8, "South Region Round of 64 Winners:");
+    Team::displayRoundWinners(midwest64Arr, 8, "Midwest Region Round of 64 Winners:");
 
 
 // Round of 32
@@ -252,10 +253,10 @@ int main() {
     Team midwest32Arr[4];
 
     // Choose and fill round of 32 winners
-    Team::randomWinner(east64Arr, east32Arr, 8);
-    Team::randomWinner(west64Arr, west32Arr, 8);
-    Team::randomWinner(south64Arr, south32Arr, 8);
-    Team::randomWinner(midwest64Arr, midwest32Arr, 8);
+    Team::pantoneWinner(east64Arr, east32Arr, 8);
+    Team::pantoneWinner(west64Arr, west32Arr, 8);
+    Team::pantoneWinner(south64Arr, south32Arr, 8);
+    Team::pantoneWinner(midwest64Arr, midwest32Arr, 8);
 
     // Display round of 32 winners
     Team::displayRoundWinners(east32Arr, 4, "East Region Round of 32 Winners:");
@@ -273,10 +274,10 @@ int main() {
     Team midwest16Arr[2];
 
     // Choose and fill Sweet Sixteen winners
-    Team::randomWinner(east32Arr, east16Arr, 4);
-    Team::randomWinner(west32Arr, west16Arr, 4);
-    Team::randomWinner(south32Arr, south16Arr, 4);
-    Team::randomWinner(midwest32Arr, midwest16Arr, 4);
+    Team::pantoneWinner(east32Arr, east16Arr, 4);
+    Team::pantoneWinner(west32Arr, west16Arr, 4);
+    Team::pantoneWinner(south32Arr, south16Arr, 4);
+    Team::pantoneWinner(midwest32Arr, midwest16Arr, 4);
 
     // Display Sweet Sixteen winners
     Team::displayRoundWinners(east16Arr, 2, "East Region Sweet Sixteen Winners:");
@@ -295,10 +296,10 @@ int main() {
     Team midwest8Arr[1];
 
     // Choose and fill Elite Eight winners
-    Team::randomWinner(east16Arr, east8Arr, 2);
-    Team::randomWinner(west16Arr, west8Arr, 2);
-    Team::randomWinner(south16Arr, south8Arr, 2);
-    Team::randomWinner(midwest16Arr, midwest8Arr, 2);
+    Team::pantoneWinner(east16Arr, east8Arr, 2);
+    Team::pantoneWinner(west16Arr, west8Arr, 2);
+    Team::pantoneWinner(south16Arr, south8Arr, 2);
+    Team::pantoneWinner(midwest16Arr, midwest8Arr, 2);
 
     // Display Elite Eight winners
     Team::displayRoundWinners(east8Arr, 1, "East Region Elite Eight Winner");
@@ -316,22 +317,22 @@ int main() {
 
     // Choose and fill Elite Eight winners
     // East vs. West winner
-    Team::randomWinner(east8Arr, west8Arr, finalFourArr1, 0);
+ //   Team::pantoneWinner(east8Arr, west8Arr, finalFourArr1);
     // South vs. Midwest winner
-    Team::randomWinner(south8Arr, midwest8Arr, finalFourArr2, 1);
+   // Team::pantoneWinner(south8Arr, midwest8Arr, finalFourArr2);
 
     // Display Final Four winners
-    Team::displayRoundWinners(finalFourArr1, 1, "East vs. West Final Four Winner:");
-    Team::displayRoundWinners(finalFourArr2, 1, "South vs. Midwest Final Four Winner:");
+    //Team::displayFinalFour(finalFourArr1, 0, "East vs. West Final Four Winner:");
+    //Team::displayFinalFour(finalFourArr2, 0, "South vs. Midwest Final Four Winner:");
 
 // Championship
 
     // Choose and fill Elite Eight winners
-    Team nationalChampion[1];
-    Team::randomWinner(finalFourArr1, finalFourArr2, nationalChampion, 0);
+   // Team nationalChampion[1];
+    //Team::pantoneWinner(finalFourArr1, finalFourArr2, nationalChampion);
 
     // Display National Champion
-    Team::displayRoundWinners(nationalChampion, 1, "National Champion:");
+    //Team::displayFinalFour(nationalChampion, 0, "National Champion:");
 
 
     return 0;

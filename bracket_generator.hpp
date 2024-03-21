@@ -34,15 +34,16 @@ public:
 
     // Choose random winners
     static void randomWinner
-    (Team const * const roundArr1, Team * const roundArr2,Team * const nextRoundArr, int gameIndex);
+    (Team const * const roundArr1, Team * const roundArr2,Team * const nextRoundArr);
 
     static void randomWinner(Team const * const roundArr, Team * nextRoundArr, const int teamsCount);
     static Team chooseRandom(const Team & team1, const Team & team2);
-    void zipCodeWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
-    Team chooseZipCode(const Team & team1, const Team & team2);
-    void pantoneWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
-    Team choosePantone(const Team & team1, const Team & team2);
+    static void zipCodeWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
+    static Team chooseZipCode(const Team & team1, const Team & team2);
+    static void pantoneWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
+    static Team choosePantone(const Team & team1, const Team & team2);
     static void displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName);
+    static void displayFinalFour(Team const * const roundArr, int index, const std::string &roundName);
 
 
 
