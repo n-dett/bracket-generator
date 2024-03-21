@@ -51,5 +51,7 @@ public:
 };
 
 void sectionHeading(std::string headingText);
+int getCriteria();
+bool newBracket(std::string message);
 
 #endif //FINAL_PROJECT_BRACKET_GENERATOR_HPP

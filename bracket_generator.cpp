@@ -245,6 +245,68 @@ void sectionHeading(std::string headingText)
 
 
 
+// Get criteria from user and validate
+int getCriteria()
+{
+    bool valid = false;
+    int criteria;
+    do
+    {
+        std::cout << "Please select a criteria (enter 1, 2, or 3):" << std::endl;
+        std::cout << "1) All random picks" << std::endl;
+        std::cout << "2) Team with the lowest last three digits of its home arena zip code" << std::endl;
+        std::cout << "3) Team with highest last two digits of its primary Pantone color" << std::endl;
+        std::cin >> criteria;
+
+        if ((criteria != 1 && criteria != 2 && criteria != 3) || std::cin.fail())
+        {
+            std::cout << "Invalid input." << std::endl;
+            std::cin.clear();
+            std:: cin.ignore(100, '\n');
+            valid = false;
+        } else
+        {
+            valid = true;
+        }
+
+    } while (!valid);
+
+    return criteria;
+}
+
+
+bool newBracket(std::string message)
+{
+    std::string newGame;
+    bool valid;
+    char yesNo;
+
+    do
+    {
+        std::cout << message << std::endl;
+        std::cin >> newGame;
+        yesNo = tolower(newGame[0]);
+
+        if (yesNo != 'y' && yesNo != 'n') {
+            std::cout << "Invalid input. ";
+            valid = false;
+            std::cin.ignore(100, '\n');
+        } else
+        {
+            valid = true;
+        }
+    } while(!valid);
+
+    if(yesNo == 'y')
+    {
+        return true;
+    } else
+    {
+        return false;
+    }
+}
+
+
 
 
 
