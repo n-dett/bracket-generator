@@ -42,8 +42,9 @@ public:
     static Team chooseZipCode(const Team & team1, const Team & team2);
     static void pantoneWinner(Team const * const roundArr, Team * const nextRoundArr, int teamsCount);
     static Team choosePantone(const Team & team1, const Team & team2);
-    static void displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName);
-    static void displayFinalFour(Team const * const roundArr, int index, const std::string &roundName);
+//    static void displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName);
+  //  static void displayFinalFour(Team const * const roundArr, int index, const std::string &roundName);
+    static void displayGame(const Team & team1, const Team & team2, const Team & winner);
 
 
 

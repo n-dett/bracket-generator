@@ -9,6 +9,8 @@ int main() {
     unsigned int seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
 
+    int criteria;
+
 
 
     // East Region
@@ -231,17 +233,15 @@ int main() {
     Team south64Arr[8];
     Team midwest64Arr[8];
 
+    std::cout << " Round of 64:" << std::endl;
+
     // Choose and fill round of 64 winners
     Team::pantoneWinner(eastArr, east64Arr, 16);
     Team::pantoneWinner(westArr, west64Arr, 16);
     Team::pantoneWinner(southArr, south64Arr, 16);
     Team::pantoneWinner(midwestArr, midwest64Arr, 16);
 
-    // Display round of 64 winners
-    Team::displayRoundWinners(east64Arr, 8, "East Region Round of 64 Winners:");
-    Team::displayRoundWinners(west64Arr, 8, "West Region Round of 64 Winners:");
-    Team::displayRoundWinners(south64Arr, 8, "South Region Round of 64 Winners:");
-    Team::displayRoundWinners(midwest64Arr, 8, "Midwest Region Round of 64 Winners:");
+
 
 
 // Round of 32
@@ -252,17 +252,14 @@ int main() {
     Team south32Arr[4];
     Team midwest32Arr[4];
 
+    std::cout << " Round of 32:" << std::endl;
+
     // Choose and fill round of 32 winners
     Team::pantoneWinner(east64Arr, east32Arr, 8);
     Team::pantoneWinner(west64Arr, west32Arr, 8);
     Team::pantoneWinner(south64Arr, south32Arr, 8);
     Team::pantoneWinner(midwest64Arr, midwest32Arr, 8);
 
-    // Display round of 32 winners
-    Team::displayRoundWinners(east32Arr, 4, "East Region Round of 32 Winners:");
-    Team::displayRoundWinners(west32Arr, 4, "West Region Round of 32 Winners:");
-    Team::displayRoundWinners(south32Arr, 4, "South Region Round of 32 Winners:");
-    Team::displayRoundWinners(midwest32Arr, 4, "Midwest Region Round of 32 Winners:");
 
 
  // Sweet Sixteen
@@ -273,17 +270,13 @@ int main() {
     Team south16Arr[2];
     Team midwest16Arr[2];
 
+    std::cout << "Sweet Sixteen:" << std::endl;
+
     // Choose and fill Sweet Sixteen winners
     Team::pantoneWinner(east32Arr, east16Arr, 4);
     Team::pantoneWinner(west32Arr, west16Arr, 4);
     Team::pantoneWinner(south32Arr, south16Arr, 4);
     Team::pantoneWinner(midwest32Arr, midwest16Arr, 4);
-
-    // Display Sweet Sixteen winners
-    Team::displayRoundWinners(east16Arr, 2, "East Region Sweet Sixteen Winners:");
-    Team::displayRoundWinners(west16Arr, 2, "West Region Sweet Sixteen Winners:");
-    Team::displayRoundWinners(south16Arr, 2, "South Region Sweet Sixteen Winners:");
-    Team::displayRoundWinners(midwest16Arr, 2, "Midwest Region Sweet SixteenWinners");
 
 
 
@@ -295,18 +288,13 @@ int main() {
     Team south8Arr[1];
     Team midwest8Arr[1];
 
+    std::cout << "Elite Eight:" << std::endl;
+
     // Choose and fill Elite Eight winners
     Team::pantoneWinner(east16Arr, east8Arr, 2);
     Team::pantoneWinner(west16Arr, west8Arr, 2);
     Team::pantoneWinner(south16Arr, south8Arr, 2);
     Team::pantoneWinner(midwest16Arr, midwest8Arr, 2);
-
-    // Display Elite Eight winners
-    Team::displayRoundWinners(east8Arr, 1, "East Region Elite Eight Winner");
-    Team::displayRoundWinners(west8Arr, 1, "West Region Elite Eight Winner");
-    Team::displayRoundWinners(south8Arr, 1, "South Region Elite Eight Winner");
-    Team::displayRoundWinners(midwest8Arr, 1, "Midwest Region Elite Eight Winner");
-
 
 
 // Final Four
@@ -315,24 +303,24 @@ int main() {
     Team finalFourArr1[1];
     Team finalFourArr2[1];
 
+    std::cout << "Final Four:" << std::endl;
+
     // Choose and fill Elite Eight winners
     // East vs. West winner
- //   Team::pantoneWinner(east8Arr, west8Arr, finalFourArr1);
+   // Team::pantoneWinner(east8Arr, west8Arr, finalFourArr1);
     // South vs. Midwest winner
    // Team::pantoneWinner(south8Arr, midwest8Arr, finalFourArr2);
 
-    // Display Final Four winners
-    //Team::displayFinalFour(finalFourArr1, 0, "East vs. West Final Four Winner:");
-    //Team::displayFinalFour(finalFourArr2, 0, "South vs. Midwest Final Four Winner:");
+
 
 // Championship
 
-    // Choose and fill Elite Eight winners
+    // Choose and fill National Champion
    // Team nationalChampion[1];
+
+    std::cout << "National Championship:" << std::endl;
     //Team::pantoneWinner(finalFourArr1, finalFourArr2, nationalChampion);
 
-    // Display National Champion
-    //Team::displayFinalFour(nationalChampion, 0, "National Champion:");
 
 
     return 0;

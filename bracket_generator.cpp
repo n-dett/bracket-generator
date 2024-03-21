@@ -4,6 +4,7 @@
 
 #include "bracket_generator.hpp"
 #include <iostream>
+#include <iomanip>
 
 
 
@@ -50,11 +51,15 @@ void Team::randomWinner(Team const * const roundArr, Team * const nextRoundArr, 
         // Add winner to next round array
         nextRoundArr[nextRoundIndex] = winner;
 
+        displayGame(team1, team2, winner);
+
         nextRoundIndex++;    // Move to next element in resulting array
         teamIndex++;         // Move to next element to get first team of next game
         teamsCount--;        // Move backward from end of array to get second team
 
     }
+
+    std::cout << std::endl;
 }
 
 
@@ -103,11 +108,15 @@ void Team::zipCodeWinner(Team const * const roundArr, Team * const nextRoundArr,
         // Add winner to next round array
         nextRoundArr[nextRoundIndex] = winner;
 
+        displayGame(team1, team2, winner);
+
         nextRoundIndex++;    // Move to next element in resulting array
         teamIndex++;         // Move to next element to get first team of next game
         teamsCount--;        // Move backward from end of array to get second team
 
     }
+
+    std::cout << std::endl;
 }
 
 
@@ -153,11 +162,15 @@ void Team::pantoneWinner(Team const * const roundArr, Team * const nextRoundArr,
         // Add winner to next round array
         nextRoundArr[nextRoundIndex] = winner;
 
+        displayGame(team1, team2, winner);
+
         nextRoundIndex++;    // Move to next element in resulting array
         teamIndex++;         // Move to next element to get first team of next game
         teamsCount--;        // Move backward from end of array to get second team
 
     }
+
+    std::cout << std::endl;
 }
 
 
@@ -179,32 +192,15 @@ Team Team::choosePantone(const Team & team1, const Team & team2)
     return winner;
 }
 
-// Display winner in each round
-void Team::displayRoundWinners(Team const * const roundArr, int roundArrLength, const std::string &roundName)
+
+void Team::displayGame(const Team & team1, const Team & team2, const Team & winner)
 {
-    int roundArrIndex = 0;
-
-    std::cout << roundName << std::endl;
-    for(int i=0; i<roundArrLength; i++)
-    {
-        std::cout << roundArr[roundArrIndex].getSeed() << " "
-        << roundArr[roundArrIndex].getName() << std::endl;
-
-        roundArrIndex++;
-    }
-
-    std::cout << std::endl;
+    std::cout << std::left << std::setw(2) << team1.getSeed() << " " << std::setw(16) << team1.getName() << " vs. " <<
+    std::setw(2) << team2.getSeed() << " " << std::setw(16) << team2.getName() <<
+    " -----> " << std::setw(2) << winner.getSeed() << " " << std::setw(20) <<
+    winner.getName() << std::endl;
 }
 
-// Display final four
-void Team::displayFinalFour(Team const * const roundArr, int index, const std::string &roundName)
-{
-    std::cout << roundName << std::endl;
-        std::cout << roundArr[index].getSeed() << " "
-                  << roundArr[index].getName() << std::endl;
-
-    std::cout << std::endl;
-}
 
 
 
